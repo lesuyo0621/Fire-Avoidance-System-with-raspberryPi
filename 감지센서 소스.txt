@@ -1,0 +1,45 @@
+#include <stdio.h>
+#include <wiringPi.h>
+#define FLAME1 26
+#define FLAME2 21
+#define PIR2 16
+#define PIR1 13
+
+
+int main(void){
+        wiringPiSetupGpio();
+        pinMode(FLAME1,INPUT);
+        pinMode(FLAME2,INPUT);
+        pinMode(PIR1, INPUT);
+        pinMode(PIR2, INPUT);
+
+                if(digitalRead(FLAME1)==LOW){
+                        if(digitalRead(PIR1==0)){
+                        printf("Fire1, Human1");
+                        }
+                        else{
+                        printf("Fire1");
+                        }
+                }else if(digitalRead(FLAME1)==HIGH){
+                        if(digitalRead(PIR1==0)){
+                        printf("Safe1, Human1");
+                        }else{
+                        printf("Safe1");
+                        }
+                }
+                if(digitalRead(FLAME2)==LOW){
+                        if(digitalRead(PIR2==0)){
+                        printf("Fire2, Human2");
+                        }else{
+                        printf("Fire2");
+                        }
+                }else if(digitalRead(FLAME2)==HIGH){
+                        if(digitalRead(PIR2==0)){
+                        printf("Safe2, Human2");
+                        }else{
+                        printf("Safe2");
+                        }
+                }
+
+	return 0;
+}
